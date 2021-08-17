@@ -1,0 +1,18 @@
+<?xml version ="1.0" encoding ="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--复杂版带圆角-->
+    <!--未点击显示颜色-->
+    <item android:state_pressed="false">
+        <shape>
+            <solid  android:color="@color/color_188FFF" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+    <!--点击显示颜色-->
+    <item android:state_pressed="true">
+        <shape>
+            <solid  android:color="@color/color_ff0000" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+</selector>

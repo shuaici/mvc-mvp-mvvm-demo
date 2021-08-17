@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_mvc"
+        style="@style/SCCBtnStyle"
+        android:layout_marginTop="@dimen/dimen_100"
+        android:text="@string/str_mvc" />
+
+    <Button
+        android:id="@+id/btn_mvp"
+        style="@style/SCCBtnStyle"
+        android:text="@string/str_mvp" />
+
+    <Button
+        android:id="@+id/btn_mvvm"
+        style="@style/SCCBtnStyle"
+        android:text="@string/str_mvvm" />
+</LinearLayout>
