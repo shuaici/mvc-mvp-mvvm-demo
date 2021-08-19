@@ -4,28 +4,13 @@
     <data>
         <!--为引入的类从新起一个变量名，方便下面使用-->
         <variable
-            name="user"
-            type="com.scc.architecture.mvvm.model.User" />
-        <!--可以引用获取输入框中输入的内容-->
-        <variable
-            name="input"
-            type="String" />
-
+            name="loginViewModel"
+            type="com.scc.architecture.mvvm.viewmodel.LoginViewModel" />
     </data>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/tv_title"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_50"
-            android:background="@color/color_188FFF"
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_size_18" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -39,7 +24,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/str_account"
                 android:textSize="@dimen/text_size_18" />
-
             <EditText
                 android:id="@+id/et_account"
                 android:layout_width="match_parent"
@@ -50,7 +34,7 @@
                 android:hint="@string/str_account_hint"
                 android:maxLength="20"
                 android:maxLines="1"
-                android:text="@={user.name}" />
+                android:text="@={loginViewModel.user.name}" />
         </LinearLayout>
 
         <LinearLayout
@@ -75,7 +59,7 @@
                 android:hint="@string/str_password_hint"
                 android:maxLength="20"
                 android:maxLines="1"
-                android:text="@={user.password}" />
+                android:text="@={loginViewModel.user.password}" />
         </LinearLayout>
 
         <Button
@@ -83,6 +67,7 @@
             style="@style/SCCBtnStyle"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/dimen_30"
+            android:onClick="login"
             android:text="@string/str_login" />
 
         <Button
@@ -90,6 +75,7 @@
             style="@style/SCCBtnStyle"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/dimen_20"
+            android:onClick="back"
             android:text="@string/str_back" />
     </LinearLayout>
 
