@@ -1,27 +1,28 @@
 package com.scc.architecture.mvvm.viewmodel;
 
-import com.scc.architecture.mvvm.Callback;
+import android.util.Log;
+
 import com.scc.architecture.mvvm.model.User;
 
-import androidx.databinding.ViewDataBinding;
 import androidx.lifecycle.ViewModel;
 
 public class LoginViewModel extends ViewModel {
-    public ViewDataBinding binding;
-    public LoginViewModel(ViewDataBinding binding){
-        this.binding = binding;
+    public User user;
+    public User getUser() {
+        return user;
     }
-    public void getUser(String userName, String password, Callback callback) {
-        //逻辑处理
-        User user = new User();
-        user.setPassword("111111");
-        if(userName.isEmpty()||!userName.equals("scc001")){
+    public void setUser(User user) {
+        this.user = user;
+    }
+    public void loginResult() {
+        if(user.getName().isEmpty()||!user.getName().equals("scc001")){
             user.setName("scc005");
-        }else if(password.isEmpty()||!password.equals("111111")){
+        }else if(user.getPassword().isEmpty()||!user.getPassword().equals("111111")){
             user.setName("scc004");
         }else {
             user.setName("scc003");
         }
-        callback.onCallBack(user);
+        user.setPassword("111111");
+        Log.e("--SCC--","LoginViewModel:"+user.getName()+":"+user.getPassword());
     }
 }
